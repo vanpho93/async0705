@@ -33,12 +33,27 @@ function chia(a, b) {
     });
 }
 
-function tinhDienTich(a, b, h) {
-    return cong(a, b)
-    .then(tong => nhan(tong, h))
-    .then(tich => chia(tich, 2));
+// function tinhDienTich(a, b, h) {
+//     return cong(a, b)
+//     .then(tong => nhan(tong, h))
+//     .then(tich => chia(tich, 2));
+// }
+
+// tinhDienTich(4, 5, 6)
+// .then(result => console.log(result))
+// .catch(error => console.log(error));
+
+async function tinhDienTichHinhThang(a, b, h) {
+    try {
+        const tong = await cong(a, b);
+        const tich = await nhan(tong, h);
+        const kq = await chia(tich, 2);
+        return kq;  
+    } catch (error) {
+        throw new Error('Loi gi do');
+    }
 }
 
-tinhDienTich(4, 5, 6)
+tinhDienTichHinhThang(4, 5, 'x')
 .then(result => console.log(result))
 .catch(error => console.log(error));
