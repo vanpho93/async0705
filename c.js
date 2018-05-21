@@ -40,7 +40,7 @@ function tinhDienTichHinhThang(a, b, h, cb) {
     });
 }
 
-tinhDienTichHinhThang(4, 5, 6, (error, kq) => {
+tinhDienTichHinhThang(4, 5, 'x', (error, kq) => {
     if (error) return console.log(error);
     console.log(kq);
 });
