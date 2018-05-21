@@ -33,7 +33,12 @@ function chia(a, b) {
     });
 }
 
-cong(4, 5)
-.then(tong => nhan(tong, 6))
-.then(tich => chia(tich, 2))
-.then(kq => console.log(kq));
+function tinhDienTich(a, b, h) {
+    return cong(a, b)
+    .then(tong => nhan(tong, h))
+    .then(tich => chia(tich, 2));
+}
+
+tinhDienTich(4, 5, 6)
+.then(result => console.log(result))
+.catch(error => console.log(error));
